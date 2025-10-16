@@ -4,6 +4,7 @@ from typing import Optional
 import json
 import os
 from pydantic import BaseModel
+import shutil
 
 class Student(BaseModel):
     name: str
@@ -131,3 +132,9 @@ def delete_student(student_id: int):
     data["students"] = new_students
     save_data(data)
     return {"message": "Student deleted successfully"} 
+
+@app.post("/reset")
+def reset_data():
+    shutil.copy("data_template.json", "data.json")
+    return {"status": "reset successful"}
+

@@ -11,6 +11,12 @@
             "age": 19,
             "major": "Physics",
             "id": 3
+        },
+        {
+            "name": "Ali Khan",
+            "age": 19,
+            "major": "Physics",
+            "id": 3
         }
     ]
 }
