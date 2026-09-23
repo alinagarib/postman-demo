@@ -84,7 +84,7 @@ def get_student(student_id: int):
 def add_student(student: Student):
     """POST a new student (add to list)"""
     data = load_data()
-    new_student = student.dict()
+    new_student = student.model_dump()
     new_student["id"] = len(data["students"]) + 1
     data["students"].append(new_student)
     save_data(data)
@@ -97,7 +97,7 @@ def update_student(student_id: int, updated: Student):
     data = load_data()
     for i, s in enumerate(data["students"]):
         if s["id"] == student_id:
-            new_data = updated.dict()
+            new_data = updated.model_dump()
             new_data["id"] = student_id
             data["students"][i] = new_data
             save_data(data)
@@ -113,7 +113,7 @@ def patch_student(student_id: int, partial: StudentUpdate):
 
     for s in data["students"]:
         if s["id"] == student_id:
-            update_data = partial.dict(exclude_unset=True)
+            update_data = partial.model_dump(exclude_unset=True)
             s.update(update_data)
             save_data(data)
             return s

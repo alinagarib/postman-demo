@@ -25,6 +25,17 @@ git clone https://github.com/<your-username>/fastapi-postman-demo.git
 cd fastapi-postman-demo 
 ```
 
+### Start you venv (example is powershell)
+```
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+To deactivate your venv:
+```
+deactivate
+```
+
+
 ### Install dependencies
 ```bash
 pip install -r requirements.txt
@@ -37,6 +48,9 @@ uvicorn main:app --reload
 
 ### View docs
 http://127.0.0.1:8000/docs
+
+or
+
 http://127.0.0.1:8000/redoc
 
 ### Postman demo
@@ -56,4 +70,6 @@ Steps:
 4. Verify the base_url variable is to http://127.0.0.1:8000
 
 5. Try sending each request (GET, POST, PUT, PATCH, DELETE)
+
+6. To reset back to the template, use "/reset" endpoint
 

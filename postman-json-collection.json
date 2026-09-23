@@ -104,6 +104,14 @@
         "header": [],
         "url": "{{base_url}}/students/1"
       }
+    },
+    {
+      "name": "Reset Data",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": "{{base_url}}/reset"
+      }
     }
   ],
   "variable": [
